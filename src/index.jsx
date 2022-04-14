@@ -5,6 +5,7 @@ import Login from './pages/login';
 import Costumer from './pages/costumer';
 import Register from './pages/register';
 import Details from './pages/details';
+import NotFound from './pages/notFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <Route path="/register" element={<Register />} />
       <Route path="/costumer" element={<Costumer />} />
       <Route path="/details" element={<Details />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>,
 );
