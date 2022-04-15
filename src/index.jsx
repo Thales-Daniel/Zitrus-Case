@@ -6,9 +6,7 @@ import Customer from './pages/customer';
 import Register from './pages/register';
 import Details from './pages/details';
 import NotFound from './pages/notFound';
-import server from './api/server';
-
-server();
+import './api/server';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
