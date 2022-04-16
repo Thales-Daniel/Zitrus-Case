@@ -1,12 +1,16 @@
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addCustomer } from '../../redux/customerSlice';
+
+const dispatch = useDispatch();
 
 const getCostumers = async () => {
   try {
-    const url = 'api/customers';
-    const { data } = await axios.get(url);
-    return data.costumers;
+    const fetch = await axios.get('api/customers');
+    const { data: { customers } } = fetch;
+    dispatch(addCustomer(customers));
   } catch (err) {
-    return err;
+    console.error(err);
   }
 };
 

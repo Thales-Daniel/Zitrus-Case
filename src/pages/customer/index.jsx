@@ -1,26 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Customers() {
-  const [clients, setClients] = useState([]);
-
-  const fetchApi = useCallback(async () => {
-    try {
-      const fetch = await axios.get('api/customers');
-      const { data: { customers } } = fetch;
-      setClients(customers);
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchApi();
-  }, []);
+  const customers = useSelector((state) => state.customers.data);
 
   return (
     <div>
-      {clients.map((customer) => <p>{customer.name}</p>)}
+      {customers.map((item) => <p key={item}>{item}</p>)}
     </div>
   );
 }
