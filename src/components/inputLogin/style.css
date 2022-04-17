@@ -1,0 +1,19 @@
+.inputEmail {
+  margin: 10px;
+  border-radius: 3px;
+  border: solid black 1px;
+  width: 70%;
+  height: 25%;
+}
+
+.labelEmail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+  margin: 5px 10px ;
+}

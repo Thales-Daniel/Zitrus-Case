@@ -1,12 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCustomer } from '../../redux/customerSlice';
 
 function Customers() {
-  const customers = useSelector((state) => state.customers.data);
+  const dispatch = useDispatch();
+  const customers = useSelector((state) => console.log(state));
+
+  useEffect(() => {
+    dispatch(getCustomer());
+  }, [dispatch]);
 
   return (
     <div>
-      {customers.map((item) => <p key={item}>{item}</p>)}
+      teste
     </div>
   );
 }
