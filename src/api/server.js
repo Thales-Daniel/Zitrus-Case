@@ -20,7 +20,7 @@ createServer({
     this.post('api/customers', async (schema, request) => {
       const data = JSON.parse(request.requestBody);
       return {
-        customer: (await schema.customers.create({ data })).attrs,
+        customers: (await schema.customers.create({ name: data })).attrs,
       };
     });
   },

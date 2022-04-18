@@ -4,9 +4,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 export const getCustomer = createAsyncThunk(
   'getCustomer',
   async () => {
-    const fetch = await axios.get('api/customers');
-    const { data: { customers } } = fetch;
-    return customers;
+    const fetch = await axios.get('https://625ca4b54c36c75357687926.mockapi.io/user');
+    const { data } = fetch;
+    return data;
   },
 );
 
@@ -20,9 +20,17 @@ export const customerSlice = createSlice({
   extraReducers: {
     [getCustomer.fulfilled]: (state, { payload }) => {
       // eslint-disable-next-line no-param-reassign
-      state.data = payload;
+      state.data = payload.data;
+    },
+  },
+
+  reducers: {
+    updateState: (state, { payload }) => {
+      state.data.push(payload);
     },
   },
 });
+
+export const { updateState } = customerSlice.actions;
 
 export default customerSlice.reducer;

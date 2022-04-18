@@ -5,8 +5,8 @@ import Customer from './pages/customer';
 import Register from './pages/register';
 import Details from './pages/details';
 import NotFound from './pages/notFound';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
-import './api/server';
 
 function App() {
   return (
