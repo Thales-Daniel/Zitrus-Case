@@ -1,0 +1,28 @@
+.ContainerCard {
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  width: 20%;
+  min-width: 15em;
+}
+
+
+.cardImage {
+  width: 100%;
+}
+
+.cardButtons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.cardButton {
+  text-decoration: none;
+  padding: 5px;
+  border: solid black 1px;
+  color: black;
+  background-color: white;
+  border-radius: 2px;
+  margin: 8px 5px 8px 0;
+}
