@@ -83,7 +83,7 @@
 }
 
 .inputLogradouro {
-  width: 50%;
+  width: 80%;
   height: 2em;
   font-size: 15px;
   border-radius: 5px;
@@ -114,7 +114,7 @@
     margin: 0;
 }
 
-.inputState {
+.inputUf {
   width: 80%;
   height: 2em;
   font-size: 15px;
@@ -124,4 +124,23 @@
 .labelEstado {
   display: flex;
   flex-direction: row;
+}
+
+.createUserButton {
+  width: 30%;
+  flex-wrap: nowrap;
+  height: 2.2em;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.inputLogradouro:focus {
+  background-color: rgb(216, 213, 213);
+  outline: none
+}
+
+.inputUf:focus {
+  background-color: rgb(216, 213, 213);
+  outline: none
 }

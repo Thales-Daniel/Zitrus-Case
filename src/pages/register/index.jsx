@@ -7,15 +7,23 @@ function Register() {
   const [password, setPassword] = useState('');
   const [cep, setCep] = useState('');
   const [cepInvalido, setCepInvalido] = useState(false);
-  const [address, setAddress] = useState({});
+  const [logradouro, setLogradouro] = useState('');
+  const [cidade, setCidade] = useState('');
+  const [estado, setEstado] = useState('');
+  const [bairro, setBairro] = useState('');
+  // eslint-disable-next-line no-unused-vars
+  const [address, setAddres] = useState({});
 
   async function searchAddress() {
     try {
       const url = `https://opencep.com/v1/${cep}`;
-      const search = await axios(url);
-      setAddress(search.data);
+      const { data } = await axios(url);
+      setLogradouro(data.logradouro);
+      setCidade(data.localidade);
+      setEstado(data.uf);
+      setBairro(data.bairro);
+      setAddres(data);
     } catch (err) {
-      setAddress({});
       setCepInvalido(true);
       setTimeout(() => setCepInvalido(false), 2000);
     }
@@ -39,24 +47,27 @@ function Register() {
               <p className="addressTittle">Cep</p>
               <input id="cep" className="inputAddress" maxLength="8" type="text" value={cep} onChange={(e) => setCep(e.target.value)} placeholder="00000000" />
               <button type="button" className="buttonCep" onClick={searchAddress}>Verificar</button>
+              <br />
+              {cepInvalido && <small className="cepInvalido">Cep Inválido</small>}
             </div>
           </label>
-          {cepInvalido && <small className="cepInvalido">Cep Inválido</small>}
-          <label htmlFor="cep" className="labelCep">
+          <label htmlFor="logradouro" className="labelCep">
             <p className="addressTittle">Logradouro</p>
-            <input id="cep" className="inputAddress" maxLength="8" type="text" value={address.logradouro} />
-
+            <input id="logradouro" className="inputLogradouro" maxLength="8" type="text" value={logradouro} onChange={(e) => setLogradouro(e.target.value)} />
+            <p className="addressTittle">Bairro</p>
+            <input id="cidade" className="inputUf" maxLength="8" type="text" value={bairro} onChange={(e) => setBairro(e.target.value)} />
           </label>
-          <label htmlFor="estado" className="labelEstado">
+          <label htmlFor="cidade" className="labelEstado">
             <div>
               <p className="addressTittle">Cidade</p>
-              <input id="cep" className="inputState" maxLength="8" type="text" value={address.localidade} />
+              <input id="cidade" className="inputUf" maxLength="8" type="text" value={cidade} onChange={(e) => setCidade(e.target.value)} />
             </div>
             <div>
               <p id="estado" className="addressTittle">Estado</p>
-              <input id="cep" className="inputState" maxLength="8" type="text" value={address.uf} />
+              <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
           </label>
+          <button type="submit" className="createUserButton">Criar Usuário</button>
         </form>
       </div>
     </div>

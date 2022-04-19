@@ -6,6 +6,7 @@ export const getCustomer = createAsyncThunk(
   async () => {
     const fetch = await axios.get('https://625ca4b54c36c75357687926.mockapi.io/user');
     const { data } = fetch;
+    console.log(data);
     return data;
   },
 );
