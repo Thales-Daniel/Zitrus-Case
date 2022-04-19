@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
 
-function Header() {
+// eslint-disable-next-line react/prop-types
+function Header({ titulo }) {
   return (
     <header className="header">
-      <h1 className="titulo">Clientes</h1>
+      <h1 className="titulo">{titulo}</h1>
     </header>
   );
 }

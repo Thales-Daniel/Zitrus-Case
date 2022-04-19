@@ -6,9 +6,8 @@ import './style.css';
 function Customers() {
   return (
     <div>
-      <Header />
+      <Header titulo="Clientes" />
       <div className="customerContainer">
-
         <CustomersCard />
       </div>
 
