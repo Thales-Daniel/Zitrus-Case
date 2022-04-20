@@ -47,7 +47,7 @@ function CustomersCard({
           <Link to="/details">
             <button type="button" className="cardButton" onClick={() => editCostumer(id)}>Editar</button>
           </Link>
-          <button className="cardButton" type="button" onClick={() => customerDelete(id)}>excluir</button>
+          <button className="cardButton" type="button" onClick={() => customerDelete(id)}>Excluir</button>
         </div>
       </div>
     </div>

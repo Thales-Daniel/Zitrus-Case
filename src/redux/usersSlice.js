@@ -18,7 +18,9 @@ export const usersSlice = createSlice({
 
   extraReducers: {
     [getUsers.fulfilled]: (state, { payload }) => {
-      state.data = payload;
+      let { data } = state;
+      data = payload;
+      return data;
     },
   },
 });

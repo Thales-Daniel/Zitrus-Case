@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './style.css';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { postCustomer } from '../../redux/customerSlice';
 
 function Register() {
@@ -13,8 +14,6 @@ function Register() {
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [bairro, setBairro] = useState('');
-  // eslint-disable-next-line no-unused-vars
-  const [address, setAddres] = useState({});
 
   const dispatch = useDispatch();
 
@@ -26,13 +25,14 @@ function Register() {
       setCidade(data.localidade);
       setEstado(data.uf);
       setBairro(data.bairro);
-      setAddres(data);
     } catch (err) {
       setCepInvalido(true);
       setCep('');
       setTimeout(() => setCepInvalido(false), 2000);
     }
   }
+
+  const verifyFields = usuario && senha && cep && logradouro && cidade && estado && bairro;
 
   const postUser = (event) => {
     event.preventDefault();
@@ -84,8 +84,10 @@ function Register() {
               <p id="estado" className="addressTittle">Estado</p>
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
+            <Link to="/customer">
+              <button type="submit" className="createUserButton" disabled={!verifyFields}>Criar Cliente</button>
+            </Link>
           </label>
-          <button type="submit" className="createUserButton">Criar Cliente</button>
         </form>
       </div>
     </div>

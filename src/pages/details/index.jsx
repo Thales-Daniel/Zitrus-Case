@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 import { putCustomer } from '../../redux/customerSlice';
 
 function Details() {
   const lastUser = useSelector((state) => state.customers.lastUser);
-
-  useEffect(() => {
-    console.log(lastUser);
-  }, [lastUser]);
 
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
@@ -19,8 +16,16 @@ function Details() {
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [bairro, setBairro] = useState('');
-
+  const [returnPage, setReturnPage] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!returnPage) {
+      return undefined;
+    }
+    return navigate('/customer');
+  }, [returnPage]);
 
   async function searchAddress() {
     try {
@@ -52,11 +57,17 @@ function Details() {
     dispatch(putCustomer(user));
   };
 
+  const backToCostumer = () => {
+    setReturnPage(true);
+  };
+
+  const verifyFields = usuario && senha && cep && logradouro && cidade && estado && bairro;
+
   return (
     <div className="container-register">
       <div className="wrap-register">
         <form className="register-form" onSubmit={updateUser}>
-          <h2 className="register-form-title">Adicionar Cliente</h2>
+          <h2 className="register-form-title">Editar Cliente</h2>
           <label htmlFor="usuario" className="labelRegister">
             <p className="registerFildTitle">Usuário</p>
             <input id="usuario" className="inputRegister" type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
@@ -90,7 +101,7 @@ function Details() {
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
           </label>
-          <button type="submit" className="createUserButton">Criar Cliente</button>
+          <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Editar Cliente</button>
         </form>
       </div>
     </div>

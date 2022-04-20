@@ -87,3 +87,8 @@ export const customerSlice = createSlice({
 export const { updateState } = customerSlice.actions;
 
 export default customerSlice.reducer;
+
+// criar 2 estados, 1 para o array filtrado, outro para a palavra q vai filtrar
+// quando fizer as requisições dos clientes,
+// fazer um useffect para filtrar o array original de acordo com a palavra,
+// depois setar o array filtrado com o valor
