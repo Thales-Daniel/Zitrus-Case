@@ -4,6 +4,7 @@ import './style.css';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { postCustomer } from '../../redux/customerSlice';
+import BotaoVoltar from '../../components/botaoVoltar';
 
 function Register() {
   const [usuario, setUsuario] = useState('');
@@ -94,8 +95,9 @@ function Register() {
               <p id="estado" className="addressTittle">Estado</p>
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
-            <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Criar Cliente</button>
+            <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Criar</button>
           </label>
+          <BotaoVoltar />
         </form>
       </div>
     </div>

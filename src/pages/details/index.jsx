@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 import { putCustomer } from '../../redux/customerSlice';
+import BotaoVoltar from '../../components/botaoVoltar';
 
 function Details() {
   const lastUser = useSelector((state) => state.customers.lastUser);
@@ -102,6 +103,7 @@ function Details() {
             </div>
           </label>
           <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Editar Cliente</button>
+          <BotaoVoltar />
         </form>
       </div>
     </div>

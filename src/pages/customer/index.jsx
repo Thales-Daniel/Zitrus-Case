@@ -15,7 +15,7 @@ function Customers() {
 
   return (
     <div>
-      <Header titulo="Clientes" />
+      <Header titulo="Clientes" funcao="Criar Cliente" pathName="/register" />
       <div className="containerCustomerList">
         {customers.map(({
           image, Rua, bairro, cidade, estado, name, id,
