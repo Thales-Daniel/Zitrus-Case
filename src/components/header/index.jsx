@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CreateCustomerLink from '../createCustomerLink';
 import './style.css';
 
-// eslint-disable-next-line react/prop-types
 function Header({ titulo }) {
   return (
     <header className="header">
@@ -11,5 +11,9 @@ function Header({ titulo }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  titulo: PropTypes.string,
+}.isRequired;
 
 export default Header;

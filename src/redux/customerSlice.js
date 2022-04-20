@@ -55,7 +55,6 @@ export const customerSlice = createSlice({
 
   extraReducers: {
     [getCustomer.fulfilled]: (state, { payload }) => {
-      // eslint-disable-next-line no-param-reassign
       state.data = payload;
     },
     [postCustomer.fulfilled]: (state, { payload }) => {
@@ -63,16 +62,13 @@ export const customerSlice = createSlice({
     },
     [deleteCustomer.fulfilled]: (state, { payload }) => {
       const newData = state.data.filter((item) => item.id !== payload.id);
-      // eslint-disable-next-line no-param-reassign
       state.data = newData;
     },
     [getCustomerById.fulfilled]: (state, { payload }) => {
-      // eslint-disable-next-line no-param-reassign
       state.lastUser = payload;
     },
     [putCustomer.fulfilled]: (state, { payload }) => {
       const client = state.data.findIndex((customer) => customer.id === payload.id);
-      // eslint-disable-next-line no-param-reassign
       state.data[client] = payload;
     },
   },
