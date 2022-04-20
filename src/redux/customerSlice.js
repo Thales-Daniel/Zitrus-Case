@@ -19,11 +19,29 @@ export const postCustomer = createAsyncThunk(
   },
 );
 
+export const deleteCustomer = createAsyncThunk(
+  'deleteCustomer',
+  async (id) => {
+    const url = `https://625f410a873d6798e2b4810f.mockapi.io/zitrus/${id}`;
+    const { data } = await axios.delete(url);
+    return data;
+  },
+);
+
+export const getCustomerById = createAsyncThunk(
+  'getCustomerById',
+  async (id) => {
+    const url = `https://625f410a873d6798e2b4810f.mockapi.io/zitrus/${id}`;
+    const { data } = await axios.get(url);
+    return data;
+  },
+);
+
 export const customerSlice = createSlice({
   name: 'customer',
   initialState: {
     data: [],
-    isLoading: false,
+    lastUser: {},
   },
 
   extraReducers: {
@@ -33,6 +51,15 @@ export const customerSlice = createSlice({
     },
     [postCustomer.fulfilled]: (state, { payload }) => {
       state.data.push(payload);
+    },
+    [deleteCustomer.fulfilled]: (state, { payload }) => {
+      const newData = state.data.filter((item) => item.id !== payload.id);
+      // eslint-disable-next-line no-param-reassign
+      state.data = newData;
+    },
+    [getCustomerById.fulfilled]: (state, { payload }) => {
+      // eslint-disable-next-line no-param-reassign
+      state.lastUser = payload;
     },
   },
 

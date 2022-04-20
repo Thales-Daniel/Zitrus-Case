@@ -20,6 +20,7 @@ function Customers() {
           image, Rua, bairro, cidade, estado, name, id,
         }) => (
           <CustomersCard
+            id={id}
             key={id}
             nome={name}
             logradouro={Rua}
