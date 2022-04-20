@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './style.css';
+import { useDispatch } from 'react-redux';
+import { postCustomer } from '../../redux/customerSlice';
 
 function Register() {
   const [usuario, setUsuario] = useState('');
-  const [password, setPassword] = useState('');
+  const [senha, setSenha] = useState('');
   const [cep, setCep] = useState('');
   const [cepInvalido, setCepInvalido] = useState(false);
   const [logradouro, setLogradouro] = useState('');
@@ -13,6 +15,8 @@ function Register() {
   const [bairro, setBairro] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [address, setAddres] = useState({});
+
+  const dispatch = useDispatch();
 
   async function searchAddress() {
     try {
@@ -25,22 +29,36 @@ function Register() {
       setAddres(data);
     } catch (err) {
       setCepInvalido(true);
+      setCep('');
       setTimeout(() => setCepInvalido(false), 2000);
     }
   }
 
+  const postUser = (event) => {
+    event.preventDefault();
+    const user = {
+      name: usuario,
+      image: '',
+      Rua: logradouro,
+      cidade,
+      estado,
+      bairro,
+    };
+    dispatch(postCustomer(user));
+  };
+
   return (
     <div className="container-register">
       <div className="wrap-register">
-        <form className="register-form">
-          <h2 className="register-form-title">Cadastre-se</h2>
+        <form className="register-form" onSubmit={postUser}>
+          <h2 className="register-form-title">Adicionar Cliente</h2>
           <label htmlFor="usuario" className="labelRegister">
             <p className="registerFildTitle">Usuário</p>
             <input id="usuario" className="inputRegister" type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
           </label>
           <label htmlFor="senha" className="labelRegister">
             <p className="registerFildTitle">Senha</p>
-            <input id="senha" className="inputRegister" type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input id="senha" className="inputRegister" type="text" value={senha} onChange={(e) => setSenha(e.target.value)} />
           </label>
           <label htmlFor="cep" className="labelCep">
             <div>
@@ -67,7 +85,7 @@ function Register() {
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
           </label>
-          <button type="submit" className="createUserButton">Criar Usuário</button>
+          <button type="submit" className="createUserButton">Criar Cliente</button>
         </form>
       </div>
     </div>
