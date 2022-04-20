@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import notFoundUser from '../../assets/unknown.png';
 import { deleteCustomer, getCustomerById } from '../../redux/customerSlice';
 import './style.css';
 
 function CustomersCard({
-  // eslint-disable-next-line react/prop-types
   imagem, nome, logradouro, localidade, uf, bairro, id,
 }) {
   const dispatch = useDispatch();
@@ -28,17 +28,17 @@ function CustomersCard({
           {' '}
           {logradouro || ''}
         </p>
-        <p className="address">
+        <p className="endereco">
           Bairro:
           {' '}
           {bairro || ''}
         </p>
-        <p className="address">
+        <p className="endereco">
           Cidade:
           {' '}
           {localidade || ''}
         </p>
-        <p className="address">
+        <p className="endereco">
           Estado:
           {' '}
           {uf || ''}
@@ -53,5 +53,15 @@ function CustomersCard({
     </div>
   );
 }
+
+CustomersCard.propTypes = {
+  imagem: PropTypes.string,
+  nome: PropTypes.string,
+  logradouro: PropTypes.string,
+  localidade: PropTypes.string,
+  uf: PropTypes.string,
+  bairro: PropTypes.string,
+  id: PropTypes.string,
+}.isRequired;
 
 export default CustomersCard;

@@ -31,6 +31,7 @@ function Customers() {
             imagem={image}
           />
         ))}
+
       </div>
     </div>
   );

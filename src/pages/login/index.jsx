@@ -31,7 +31,7 @@ function Login() {
 
     if (findUser.length === 1) setLogged(true);
 
-    setSmall(true);
+    setTimeout(() => setSmall(true), 200);
     setTimeout(() => setSmall(false), 2000);
   };
 

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { postCustomer } from '../../redux/customerSlice';
 
 function Register() {
@@ -14,8 +14,9 @@ function Register() {
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [bairro, setBairro] = useState('');
-
   const dispatch = useDispatch();
+  const verifyFields = usuario && senha && cep && logradouro && cidade && estado && bairro;
+  const navigate = useNavigate();
 
   async function searchAddress() {
     try {
@@ -31,8 +32,17 @@ function Register() {
       setTimeout(() => setCepInvalido(false), 2000);
     }
   }
+  const [returnPage, setReturnPage] = useState(false);
+  useEffect(() => {
+    if (!returnPage) {
+      return undefined;
+    }
+    return navigate('/customer');
+  }, [returnPage]);
 
-  const verifyFields = usuario && senha && cep && logradouro && cidade && estado && bairro;
+  const backToCostumer = () => {
+    setReturnPage(true);
+  };
 
   const postUser = (event) => {
     event.preventDefault();
@@ -84,9 +94,7 @@ function Register() {
               <p id="estado" className="addressTittle">Estado</p>
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
-            <Link to="/customer">
-              <button type="submit" className="createUserButton" disabled={!verifyFields}>Criar Cliente</button>
-            </Link>
+            <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Criar Cliente</button>
           </label>
         </form>
       </div>
