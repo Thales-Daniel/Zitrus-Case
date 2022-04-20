@@ -37,6 +37,15 @@ export const getCustomerById = createAsyncThunk(
   },
 );
 
+export const putCustomer = createAsyncThunk(
+  'putCustomer',
+  async (user) => {
+    const url = `https://625f410a873d6798e2b4810f.mockapi.io/zitrus/${user.id}`;
+    const { data } = await axios.put(url, user);
+    return data;
+  },
+);
+
 export const customerSlice = createSlice({
   name: 'customer',
   initialState: {
@@ -60,6 +69,11 @@ export const customerSlice = createSlice({
     [getCustomerById.fulfilled]: (state, { payload }) => {
       // eslint-disable-next-line no-param-reassign
       state.lastUser = payload;
+    },
+    [putCustomer.fulfilled]: (state, { payload }) => {
+      const client = state.data.findIndex((customer) => customer.id === payload.id);
+      // eslint-disable-next-line no-param-reassign
+      state.data[client] = payload;
     },
   },
 

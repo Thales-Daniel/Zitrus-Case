@@ -35,13 +35,6 @@ function Login() {
           <div className="container-login-form-btn">
             <Link className="login-form-btn" to="/customer">Login</Link>
           </div>
-
-          <div className="text-center">
-            <span className="txt1">Não possui conta? </span>
-            <Link className="txt2" to="/register">
-              Criar conta
-            </Link>
-          </div>
         </form>
       </div>
     </div>

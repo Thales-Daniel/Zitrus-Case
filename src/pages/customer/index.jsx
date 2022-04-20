@@ -8,6 +8,7 @@ import './style.css';
 function Customers() {
   const customers = useSelector((state) => state.customers.data);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getCustomer());
   }, [dispatch]);

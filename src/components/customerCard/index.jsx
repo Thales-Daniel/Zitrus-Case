@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import notFoundUser from '../../assets/unknown.png';
@@ -9,7 +9,6 @@ function CustomersCard({
   // eslint-disable-next-line react/prop-types
   imagem, nome, logradouro, localidade, uf, bairro, id,
 }) {
-  const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
   const customerDelete = (usuarioId) => {
     dispatch(deleteCustomer(usuarioId));
@@ -17,7 +16,6 @@ function CustomersCard({
 
   const editCostumer = (userId) => {
     dispatch(getCustomerById(userId));
-    setRedirect(true);
   };
 
   return (
