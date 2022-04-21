@@ -97,9 +97,11 @@ function Register() {
               <p id="estado" className="addressTittle">Estado</p>
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
-            <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Criar</button>
           </label>
-          <BotaoVoltar path="/customer" />
+          <div className="criarCostumer">
+            <BotaoVoltar path="/customer" />
+            <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Criar</button>
+          </div>
         </form>
       </div>
     </div>

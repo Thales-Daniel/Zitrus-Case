@@ -104,8 +104,10 @@ function Details() {
               <input id="estado" className="inputUf" maxLength="8" type="text" value={estado} onChange={(e) => setEstado(e.target.value)} />
             </div>
           </label>
-          <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Editar Cliente</button>
-          <BotaoVoltar path="/customer" />
+          <div className="editarBotao">
+            <BotaoVoltar path="/customer" />
+            <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Editar Cliente</button>
+          </div>
         </form>
       </div>
     </div>
