@@ -9,14 +9,14 @@ import BotaoVoltar from '../../components/botaoVoltar';
 function Details() {
   const lastUser = useSelector((state) => state.customers.lastUser);
 
-  const [usuario, setUsuario] = useState('');
-  const [senha, setSenha] = useState('');
+  const [usuario, setUsuario] = useState(lastUser.name);
+  const [email, setEmail] = useState('');
   const [cep, setCep] = useState('');
   const [cepInvalido, setCepInvalido] = useState(false);
-  const [logradouro, setLogradouro] = useState('');
-  const [cidade, setCidade] = useState('');
-  const [estado, setEstado] = useState('');
-  const [bairro, setBairro] = useState('');
+  const [logradouro, setLogradouro] = useState(lastUser.Rua);
+  const [cidade, setCidade] = useState(lastUser.cidade);
+  const [estado, setEstado] = useState(lastUser.estado);
+  const [bairro, setBairro] = useState(lastUser.bairro);
   const [returnPage, setReturnPage] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ function Details() {
       return undefined;
     }
     return navigate('/customer');
-  }, [returnPage]);
+  }, [returnPage, lastUser]);
 
   async function searchAddress() {
     try {
@@ -62,7 +62,7 @@ function Details() {
     setReturnPage(true);
   };
 
-  const verifyFields = usuario && senha && cep && logradouro && cidade && estado && bairro;
+  const verifyFields = usuario && email && cep && logradouro && cidade && estado && bairro;
 
   return (
     <div className="container-register">
@@ -74,8 +74,8 @@ function Details() {
             <input id="usuario" className="inputRegister" type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
           </label>
           <label htmlFor="senha" className="labelRegister">
-            <p className="registerFildTitle">Senha</p>
-            <input id="senha" className="inputRegister" type="text" value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <p className="registerFildTitle">E-mail</p>
+            <input id="senha" className="inputRegister" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
           </label>
           <label htmlFor="cep" className="labelCep">
             <div>
