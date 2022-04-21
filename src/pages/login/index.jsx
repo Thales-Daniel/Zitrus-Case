@@ -47,7 +47,7 @@ function Login() {
               type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
-              datatestid="usuario"
+              data-testid="usuario"
             />
             <span className="focus-input" data-placeholder="Usuario" />
           </div>
@@ -58,7 +58,7 @@ function Login() {
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
-              datatestid="senha"
+              data-testid="senha"
             />
             <span className="focus-input" data-placeholder="Senha" />
           </div>
@@ -69,12 +69,13 @@ function Login() {
               className="login-form-btn"
               type="button"
               onClick={verifyLogin}
+              data-testid="login"
             >
               Login
 
             </button>
 
-            {small && <small className="cepInvalido">Login ou senha Inválidos</small>}
+            {small && <small data-testid="small" className="cepInvalido">Login ou senha Inválidos</small>}
           </div>
         </form>
       </div>
