@@ -7,16 +7,14 @@ onde o endereço é resgatado e validado por uma API de CEP. Assim teremos seç�
 clientes, cadastrar, excluir e visualizar detalhes. O acesso ao sistema foi criado para 
 ser feito por login e senha.
 
-<br />
-
+<p>&nbsp</p>
 
 # Sumário
 - [Instruções](#instruções)
 - [Tecnologias](#tecnologias)
 - [Executando o projeto](#executando-o-projeto)
-
-
----
+- [Testes](#Testes)
+- [Proximos passos](#proximos-passos)
 
 <p>&nbsp</p>
 
@@ -76,8 +74,41 @@ Alem disso para o back-end, foram criadas 2 rotas pela [Mockapi.IO]() para persi
     <img alt="router-dom" height="50" width="50" src="https://user-images.githubusercontent.com/82240828/164455549-695380e6-2505-47e4-be41-bf67920152a5.png" />
 </div>
 
-
-<br />
-<br />
+<p>&nbsp</p>
 
 # Executando o projeto
+
+Tela de Login:
+
+![navegacaoLogin](https://user-images.githubusercontent.com/82240828/164557152-162b124f-a969-44a6-8dae-15bfef1a6773.gif)
+
+Apagando e criando um cliente:
+
+![deletando-e-criando](https://user-images.githubusercontent.com/82240828/164557229-7eb7f4d6-28b0-4bfa-b104-fc11bea3e493.gif)
+
+Editando um cliente:
+
+![editando](https://user-images.githubusercontent.com/82240828/164557267-b6213bfc-4e18-415c-8872-35b113c934bd.gif)
+
+<p>&nbsp</p>
+
+# Testes
+
+Para desenvolver os testes foram feitas as instalações do Jest e do React-testing-library, porém, como foi utilizado o
+Redux toolkit ouveram problemas no desenvolvimento devido as configurações, mas se por acaso tivessemos mais tempo, esse
+problema certamente iria ser solucionado.
+
+<p>&nbsp</p>
+
+# Proximos passos
+
+Para melhorar a aplicação, iria ser feito a separação e a componentização do código ainda mais,
+assim eu iria melhorar a manutenção e a organização para futuras expansões
+
+<p>&nbsp</p>
+
+# Agradecimentos
+
+Queria agradecer a zitrus por me dar a oportunidade de participar desse teste técnico, aprendi bastante com ele
+e no futuro pretendo aprender muito mais.
+
