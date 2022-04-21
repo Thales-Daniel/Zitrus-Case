@@ -44,9 +44,10 @@ function Login() {
           <div className="wrap-input">
             <input
               className={usuario !== '' ? 'has-val input' : 'input'}
-              type="email"
+              type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
+              datatestid="usuario"
             />
             <span className="focus-input" data-placeholder="Usuario" />
           </div>
@@ -57,6 +58,7 @@ function Login() {
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
+              datatestid="senha"
             />
             <span className="focus-input" data-placeholder="Senha" />
           </div>
