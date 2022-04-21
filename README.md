@@ -13,7 +13,7 @@ ser feito por login e senha.
 - [Instruções](#instruções)
 - [Tecnologias](#tecnologias)
 - [Executando o projeto](#executando-o-projeto)
-- [Testes](#Testes)
+- [Testes](#testes)
 - [Proximos passos](#proximos-passos)
 
 <p>&nbsp</p>
@@ -80,7 +80,7 @@ Alem disso para o back-end, foram criadas 2 rotas pela [Mockapi.IO]() para persi
 
 Tela de Login:
 
-![navegacaoLogin](https://user-images.githubusercontent.com/82240828/164557152-162b124f-a969-44a6-8dae-15bfef1a6773.gif)
+![deletando-e-criando](https://user-images.githubusercontent.com/82240828/164567846-afd42b7f-6c9d-4bc6-b9ba-11927bb7f84f.gif)
 
 Apagando e criando um cliente:
 
@@ -88,7 +88,7 @@ Apagando e criando um cliente:
 
 Editando um cliente:
 
-![editando](https://user-images.githubusercontent.com/82240828/164557267-b6213bfc-4e18-415c-8872-35b113c934bd.gif)
+![editando](https://user-images.githubusercontent.com/82240828/164567814-42832cf9-2197-4f30-9195-ed36a9a1a8cc.gif)
 
 <p>&nbsp</p>
 
