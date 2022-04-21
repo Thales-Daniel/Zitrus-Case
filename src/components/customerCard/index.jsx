@@ -7,7 +7,7 @@ import { deleteCustomer, getCustomerById } from '../../redux/customerSlice';
 import './style.css';
 
 function CustomersCard({
-  imagem, nome, logradouro, localidade, uf, bairro, id,
+  imagem, email, cep, nome, logradouro, localidade, uf, bairro, id,
 }) {
   const dispatch = useDispatch();
   const customerDelete = (usuarioId) => {
@@ -43,6 +43,16 @@ function CustomersCard({
           {' '}
           {uf || ''}
         </p>
+        <p className="endereco">
+          Cep:
+          {' '}
+          {cep || ''}
+        </p>
+        <p className="endereco">
+          E-mail:
+          {' '}
+          {email || ''}
+        </p>
         <div className="cardButtons">
           <Link to="/details">
             <button type="button" className="cardButton" onClick={() => editCostumer(id)}>Editar</button>
@@ -55,7 +65,8 @@ function CustomersCard({
 }
 
 CustomersCard.propTypes = {
-  imagem: PropTypes.string,
+  email: PropTypes.string,
+  cep: PropTypes.string,
   nome: PropTypes.string,
   logradouro: PropTypes.string,
   localidade: PropTypes.string,

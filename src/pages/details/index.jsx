@@ -9,14 +9,14 @@ import BotaoVoltar from '../../components/botaoVoltar';
 function Details() {
   const lastUser = useSelector((state) => state.customers.lastUser);
 
-  const [usuario, setUsuario] = useState(lastUser.name);
+  const [usuario, setUsuario] = useState();
   const [email, setEmail] = useState('');
   const [cep, setCep] = useState('');
   const [cepInvalido, setCepInvalido] = useState(false);
-  const [logradouro, setLogradouro] = useState(lastUser.Rua);
-  const [cidade, setCidade] = useState(lastUser.cidade);
-  const [estado, setEstado] = useState(lastUser.estado);
-  const [bairro, setBairro] = useState(lastUser.bairro);
+  const [logradouro, setLogradouro] = useState();
+  const [cidade, setCidade] = useState();
+  const [estado, setEstado] = useState();
+  const [bairro, setBairro] = useState();
   const [returnPage, setReturnPage] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -53,6 +53,8 @@ function Details() {
       estado,
       bairro,
       id: lastUser.id,
+      cep,
+      email,
     };
 
     dispatch(putCustomer(user));
@@ -70,7 +72,7 @@ function Details() {
         <form className="register-form" onSubmit={updateUser}>
           <h2 className="register-form-title">Editar Cliente</h2>
           <label htmlFor="usuario" className="labelRegister">
-            <p className="registerFildTitle">Usuário</p>
+            <p className="registerFildTitle">Nome</p>
             <input id="usuario" className="inputRegister" type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
           </label>
           <label htmlFor="senha" className="labelRegister">

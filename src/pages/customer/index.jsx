@@ -18,7 +18,7 @@ function Customers() {
       <Header titulo="Clientes" funcao="Criar Cliente" pathName="/register" />
       <div className="containerCustomerList">
         {customers.map(({
-          image, Rua, bairro, cidade, estado, name, id,
+          image, Rua, bairro, cidade, estado, name, id, email, cep,
         }) => (
           <CustomersCard
             id={id}
@@ -29,6 +29,8 @@ function Customers() {
             bairro={bairro}
             localidade={cidade}
             imagem={image}
+            email={email}
+            cep={cep}
           />
         ))}
 

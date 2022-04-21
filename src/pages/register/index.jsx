@@ -8,7 +8,7 @@ import BotaoVoltar from '../../components/botaoVoltar';
 
 function Register() {
   const [usuario, setUsuario] = useState('');
-  const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState('');
   const [cep, setCep] = useState('');
   const [cepInvalido, setCepInvalido] = useState(false);
   const [logradouro, setLogradouro] = useState('');
@@ -16,7 +16,7 @@ function Register() {
   const [estado, setEstado] = useState('');
   const [bairro, setBairro] = useState('');
   const dispatch = useDispatch();
-  const verifyFields = usuario && senha && cep && logradouro && cidade && estado && bairro;
+  const verifyFields = usuario && email && cep && logradouro && cidade && estado && bairro;
   const navigate = useNavigate();
 
   async function searchAddress() {
@@ -54,6 +54,8 @@ function Register() {
       cidade,
       estado,
       bairro,
+      cep,
+      email,
     };
     dispatch(postCustomer(user));
   };
@@ -68,8 +70,8 @@ function Register() {
             <input id="usuario" className="inputRegister" type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} />
           </label>
           <label htmlFor="senha" className="labelRegister">
-            <p className="registerFildTitle">Senha</p>
-            <input id="senha" className="inputRegister" type="text" value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <p className="registerFildTitle">E-mail</p>
+            <input id="senha" className="inputRegister" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
           </label>
           <label htmlFor="cep" className="labelCep">
             <div>
