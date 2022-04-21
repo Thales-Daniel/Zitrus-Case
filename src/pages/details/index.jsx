@@ -103,7 +103,7 @@ function Details() {
             </div>
           </label>
           <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Editar Cliente</button>
-          <BotaoVoltar />
+          <BotaoVoltar path="/customer" />
         </form>
       </div>
     </div>

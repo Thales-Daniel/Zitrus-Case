@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import './style.css';
 
-function botaoVoltar() {
+function BotaoVoltar() {
   return (
     <Link className="botaoVoltar" to="/customer">
       Voltar
@@ -10,4 +10,4 @@ function botaoVoltar() {
   );
 }
 
-export default botaoVoltar;
+export default BotaoVoltar;

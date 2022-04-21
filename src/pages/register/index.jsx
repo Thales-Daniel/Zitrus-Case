@@ -97,7 +97,7 @@ function Register() {
             </div>
             <button type="submit" className="createUserButton" disabled={!verifyFields} onClick={backToCostumer}>Criar</button>
           </label>
-          <BotaoVoltar />
+          <BotaoVoltar path="/customer" />
         </form>
       </div>
     </div>
