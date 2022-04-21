@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Boas vindas ao repositório da Zitrus Case!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Nosso amigo Arnaldo solicitou para criarmos uma aplicação em React.js que
+pretende ter um sistema de cadastro de clientes com endereço vinculado,
+onde o endereço é resgatado e validado por uma API de CEP. Assim teremos seções de listar
+clientes, cadastrar, excluir e visualizar detalhes. O acesso ao sistema foi criado para 
+ser feito por login e senha.
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Sumário
+- [Instruções](#instruções)
+- [Tecnologias](#tecnologias)
+- [Executando o projeto](#executando-o-projeto)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>&nbsp</p>
 
-### `npm run build`
+# Instruções:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Inicie clonando o repositorio para sua máquina local 
+~~~
+git clone git@github.com:Thales-Daniel/Zitrus-Case.git
+~~~
+Entre na pasta do repositorio que você acabou de clonar
+~~~
+cd Zitrus-Case/
+~~~
+Logo em seguida, instale as dependencias
+~~~
+npm install
+~~~
+Apos isso, Para iniciar o projeto rode o comando
+~~~
+npm start
+~~~
+A senha e o login são as deixadas abaixo
+~~~
+Login: zitirino
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Senha: venhaserfeliz
+~~~
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p>&nbsp</p>
 
-### `npm run eject`
+# Tecnologias
+Esse projeto foi desenvolvido em React.js e foram utilizadas
+4 bibliotecas para auxiliar o desenvolvimento do projeto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - `Axios`
+  - `React-redux e redux-toolkit`
+  - `eslint`
+  - `React-router-dom`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<div align="center">
+  <img alt="react" height="60" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+  <img alt="redux" height="60" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" />
+  <img alt="eslint" height="60" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" />
+  <img alt="axios" height="60" width="80" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Axios_logo_%282020%29.svg" />
+  <img alt="router-dom" height="60" width="100" src="https://miro.medium.com/max/1400/0*8BlvIy8wNLlz6icM" />
+  <br />
+  <br />
+</div>
+  <br />
+  <br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Alem disso para o back-end, foram criadas 2 rotas pela [Mockapi.IO]() para persistência de dados.
+<div align="center">
+  <br />
+    <img alt="router-dom" height="50" width="50" src="https://user-images.githubusercontent.com/82240828/164455549-695380e6-2505-47e4-be41-bf67920152a5.png" />
+</div>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br />
+<br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Executando o projeto
