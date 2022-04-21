@@ -80,11 +80,11 @@ Alem disso para o back-end, foram criadas 2 rotas pela [Mockapi.IO]() para persi
 
 Tela de Login:
 
-![deletando-e-criando](https://user-images.githubusercontent.com/82240828/164567846-afd42b7f-6c9d-4bc6-b9ba-11927bb7f84f.gif)
+![navegacaoLogin](https://user-images.githubusercontent.com/82240828/164557152-162b124f-a969-44a6-8dae-15bfef1a6773.gif)
 
 Apagando e criando um cliente:
 
-![deletando-e-criando](https://user-images.githubusercontent.com/82240828/164557229-7eb7f4d6-28b0-4bfa-b104-fc11bea3e493.gif)
+![deletando-e-criando](https://user-images.githubusercontent.com/82240828/164567846-afd42b7f-6c9d-4bc6-b9ba-11927bb7f84f.gif)
 
 Editando um cliente:
 
